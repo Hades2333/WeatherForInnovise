@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		14206A46261C5BD1008ED897 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14206A45261C5BD1008ED897 /* Box.swift */; };
+		14206A4A261C63DC008ED897 /* UIView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14206A49261C63DC008ED897 /* UIView+Ex.swift */; };
+		14206A4E261C63ED008ED897 /* UIStackView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14206A4D261C63ED008ED897 /* UIStackView+Ex.swift */; };
+		14206A51261C6402008ED897 /* UIImageView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14206A50261C6402008ED897 /* UIImageView+Ex.swift */; };
+		14206A54261C6412008ED897 /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14206A53261C6412008ED897 /* String+Ex.swift */; };
 		14F6731A261B573900D5A77A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F67319261B573900D5A77A /* AppDelegate.swift */; };
 		14F6731E261B573900D5A77A /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F6731D261B573900D5A77A /* TodayViewController.swift */; };
 		14F67323261B573B00D5A77A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14F67322261B573B00D5A77A /* Assets.xcassets */; };
@@ -23,6 +27,10 @@
 
 /* Begin PBXFileReference section */
 		14206A45261C5BD1008ED897 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		14206A49261C63DC008ED897 /* UIView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ex.swift"; sourceTree = "<group>"; };
+		14206A4D261C63ED008ED897 /* UIStackView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Ex.swift"; sourceTree = "<group>"; };
+		14206A50261C6402008ED897 /* UIImageView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ex.swift"; sourceTree = "<group>"; };
+		14206A53261C6412008ED897 /* String+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ex.swift"; sourceTree = "<group>"; };
 		14F67316261B573900D5A77A /* WeatherForInnovise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherForInnovise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14F67319261B573900D5A77A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14F6731D261B573900D5A77A /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +57,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14206A48261C63BB008ED897 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				14206A49261C63DC008ED897 /* UIView+Ex.swift */,
+				14206A4D261C63ED008ED897 /* UIStackView+Ex.swift */,
+				14206A50261C6402008ED897 /* UIImageView+Ex.swift */,
+				14206A53261C6412008ED897 /* String+Ex.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		14F6730D261B573900D5A77A = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +99,7 @@
 		14F67334261B58FE00D5A77A /* App */ = {
 			isa = PBXGroup;
 			children = (
+				14206A48261C63BB008ED897 /* Extensions */,
 				14F67344261B65B900D5A77A /* NetworkManager */,
 				14F67319261B573900D5A77A /* AppDelegate.swift */,
 				14206A45261C5BD1008ED897 /* Box.swift */,
@@ -210,12 +230,16 @@
 				14206A46261C5BD1008ED897 /* Box.swift in Sources */,
 				14F6733F261B628200D5A77A /* WeatherViewModel.swift in Sources */,
 				14F6734A261B65DF00D5A77A /* NetworkError.swift in Sources */,
+				14206A54261C6412008ED897 /* String+Ex.swift in Sources */,
+				14206A51261C6402008ED897 /* UIImageView+Ex.swift in Sources */,
 				14F67332261B58FB00D5A77A /* MainViewController.swift in Sources */,
 				14F6733A261B5A6200D5A77A /* ForecastViewController.swift in Sources */,
 				14F67346261B65CA00D5A77A /* NetworkManager.swift in Sources */,
+				14206A4E261C63ED008ED897 /* UIStackView+Ex.swift in Sources */,
 				14F6731E261B573900D5A77A /* TodayViewController.swift in Sources */,
 				14F67342261B62DE00D5A77A /* Weather.swift in Sources */,
 				14F6731A261B573900D5A77A /* AppDelegate.swift in Sources */,
+				14206A4A261C63DC008ED897 /* UIView+Ex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
