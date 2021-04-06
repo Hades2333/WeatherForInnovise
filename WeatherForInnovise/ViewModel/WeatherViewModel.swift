@@ -15,7 +15,9 @@ class WeatherViewModel: NSObject, CLLocationManagerDelegate {
     var currentLocation: CLLocation?
     var fetchedModel: Box<Welcome?> = Box(nil)
     var weatherMessage: String?
+    var arrayForTable = [ForTable]()
 
+    
     //MARK: - Initialization
     override init() {
         super.init()
@@ -37,10 +39,29 @@ class WeatherViewModel: NSObject, CLLocationManagerDelegate {
                                       successHandler: { [weak self] (model: Welcome) in
                                         self?.fetchedModel.value = model
                                         self?.updateWeatherMessage(with: model)
+                                        self?.updateArrayForTable(with: model)
                                       },
                                       errorHandler: { (error: NetworkError) in
                                         fatalError(error.localizedDescription)
                                       })
+    }
+
+    func updateArrayForTable(with model: Welcome) {
+        var weatherImages = [UIImage]()
+        for element in 0...39 {
+            let myImage = UIImage.donwload("\(model.list[element].weather[0].icon)") ?? UIImage(systemName: "sun.max")
+            weatherImages.append(myImage!)
+        }
+
+        var tempArray = [ForTable]()
+        for element in 0...39 {
+            tempArray.append(ForTable(image: weatherImages[element],
+                                      time: model.list[element].dtTxt,
+                                      description: "\(model.list[element].weather[0].weatherDescription)",
+                                      temperature: "\(model.list[element].main.temp)",
+                                      city: "\(model.city.name)"))
+        }
+        self.arrayForTable = tempArray
     }
 
     func updateWeatherMessage(with model: Welcome) {
@@ -52,6 +73,54 @@ class WeatherViewModel: NSObject, CLLocationManagerDelegate {
         Wind speed is \(model.list[0].wind.speed) km/h. Wind angle is \(model.list[0].wind.deg) °.
         Humidity \(model.list[0].main.humidity) % and pressure is \(model.list[0].main.pressure) hPa.
         """
+    }
+
+    func calculateHeaders() -> [String] {
+        var array = [String]()
+        array.append(String.convertToDay(date: arrayForTable[0].time))
+
+        for element in 0...39 {
+            let day = String.convertToDay(date: arrayForTable[element].time)
+            if !array.contains(day) {
+                array.append(day)
+            }
+        }
+        return array
+    }
+
+    func countSections() -> Int {
+        var number = 1
+        var date = String.convertToDay(date: arrayForTable[0].time)
+        for element in 0...39 {
+            let newDate = String.convertToDay(date: arrayForTable[element].time)
+            if newDate == date {
+            } else {
+                number += 1
+                date = newDate
+            }
+        }
+        return number
+    }
+
+    func calculateNumberOfRowPerSection() -> [Int] {
+        var array = [Int]()
+
+        var number = 0
+        var comparableDay = String.convertToDay(date: arrayForTable[0].time)
+        for element in 0...39 {
+            let currentDay = String.convertToDay(date: arrayForTable[element].time)
+            if element == 39, number != 0, currentDay == comparableDay {
+                number += 1
+                array.append(number)
+            } else if currentDay == comparableDay {
+                number += 1
+            } else {
+                array.append(number)
+                number = 1
+                comparableDay = currentDay
+            }
+        }
+        return array
     }
 
     //MARK: - ConfigureGUI methods

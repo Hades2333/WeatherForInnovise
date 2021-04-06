@@ -12,6 +12,7 @@
 		14206A4E261C63ED008ED897 /* UIStackView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14206A4D261C63ED008ED897 /* UIStackView+Ex.swift */; };
 		14206A51261C6402008ED897 /* UIImageView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14206A50261C6402008ED897 /* UIImageView+Ex.swift */; };
 		14206A54261C6412008ED897 /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14206A53261C6412008ED897 /* String+Ex.swift */; };
+		14206A59261CA438008ED897 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14206A58261CA438008ED897 /* CustomTableViewCell.swift */; };
 		14F6731A261B573900D5A77A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F67319261B573900D5A77A /* AppDelegate.swift */; };
 		14F6731E261B573900D5A77A /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F6731D261B573900D5A77A /* TodayViewController.swift */; };
 		14F67323261B573B00D5A77A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14F67322261B573B00D5A77A /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 		14206A4D261C63ED008ED897 /* UIStackView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Ex.swift"; sourceTree = "<group>"; };
 		14206A50261C6402008ED897 /* UIImageView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ex.swift"; sourceTree = "<group>"; };
 		14206A53261C6412008ED897 /* String+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ex.swift"; sourceTree = "<group>"; };
+		14206A58261CA438008ED897 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		14F67316261B573900D5A77A /* WeatherForInnovise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherForInnovise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14F67319261B573900D5A77A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14F6731D261B573900D5A77A /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				14F67331261B58FB00D5A77A /* MainViewController.swift */,
 				14F6731D261B573900D5A77A /* TodayViewController.swift */,
 				14F67339261B5A6200D5A77A /* ForecastViewController.swift */,
+				14206A58261CA438008ED897 /* CustomTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				14F67346261B65CA00D5A77A /* NetworkManager.swift in Sources */,
 				14206A4E261C63ED008ED897 /* UIStackView+Ex.swift in Sources */,
 				14F6731E261B573900D5A77A /* TodayViewController.swift in Sources */,
+				14206A59261CA438008ED897 /* CustomTableViewCell.swift in Sources */,
 				14F67342261B62DE00D5A77A /* Weather.swift in Sources */,
 				14F6731A261B573900D5A77A /* AppDelegate.swift in Sources */,
 				14206A4A261C63DC008ED897 /* UIView+Ex.swift in Sources */,

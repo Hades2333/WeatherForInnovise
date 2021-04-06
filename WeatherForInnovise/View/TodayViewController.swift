@@ -285,7 +285,6 @@ class TodayViewController: UIViewController {
         for element in 0...4 {
             littleImages[element].snp.makeConstraints { make in
                 make.top.equalTo(verticalStackWithImageAndLabel[element].snp.top).labeled("Labeled:")
-                //make.bottom.equalTo(littleLabels[element].snp.top)
                 make.width.equalTo(littleImages[element].snp.height).labeled("Labeled:")
             }
         }
@@ -311,7 +310,6 @@ class TodayViewController: UIViewController {
 
         temperatureLabel.snp.makeConstraints { make in
             make.top.equalTo(placeLabel.snp.bottom).labeled("Labeled: temperatureLabel top")
-            //make.bottom.equalTo(topStack.snp.bottom).inset(50).labeled("Labeled: temperatureLabel bottom")
             make.width.equalTo(topStack).labeled("Labeled: temperatureLabel width")
         }
     }

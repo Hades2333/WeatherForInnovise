@@ -5,9 +5,7 @@
 //  Created by Hellizar on 5.04.21.
 //
 
-import Foundation
-
-import Foundation
+import UIKit
 
 // MARK: - Welcome
 struct Welcome: Codable {
@@ -120,3 +118,10 @@ struct Wind: Codable {
     let deg: Int
 }
 
+struct ForTable {
+    var image: UIImage
+    var time: String
+    var description: String
+    var temperature: String
+    var city: String
+}
