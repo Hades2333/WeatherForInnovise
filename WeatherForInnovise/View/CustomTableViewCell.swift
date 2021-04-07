@@ -89,13 +89,10 @@ class CustomTableViewCell: UITableViewCell {
                                         height: imageSize)
     }
 
-    func configure(with image: UIImage,
-                   time: String,
-                   description: String,
-                   temperature: String) {
-        self.weatherImage.image = image
-        self.timeLabel.text = time
-        self.conditionLabel.text = description
-        self.temperatureLabel.text = "\(temperature)°"
+    func configure(withModel model: ForTable) {
+        self.weatherImage.image = model.image
+        self.timeLabel.text = model.time
+        self.conditionLabel.text = model.description
+        self.temperatureLabel.text = "\(model.temperature)°"
     }
 }

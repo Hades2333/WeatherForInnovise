@@ -123,7 +123,6 @@ class TodayViewController: UIViewController {
 
     private let bigImage: UIImageView = {
         let view = UIImageView()
-        view.image = UIImage(systemName: "sun.max")
         view.tintColor = .systemYellow
         return view
     }()
@@ -314,4 +313,3 @@ class TodayViewController: UIViewController {
         }
     }
 }
-

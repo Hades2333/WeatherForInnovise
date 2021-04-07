@@ -15,8 +15,8 @@ class ForecastViewController: UIViewController {
     //MARK: GUI Variables
     private let headerLabel: UILabel = {
         let label = UILabel()
-        label.text = "Тут должен быть город"
         label.textAlignment = .center
+        label.text = "city"
         return label
     }()
 
@@ -86,9 +86,6 @@ class ForecastViewController: UIViewController {
 extension ForecastViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        guard !weatherViewModel.arrayForTable.isEmpty else {
-//            return ""
-//        }
         if section == 0 {
             return "Today"
         } else {
@@ -104,7 +101,6 @@ extension ForecastViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //weatherViewModel.arrayForTable.count
         guard !weatherViewModel.arrayForTable.isEmpty else {
             return 0
         }
@@ -121,61 +117,38 @@ extension ForecastViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
 
+        
         let extra = weatherViewModel.calculateNumberOfRowPerSection()
         switch indexPath.section {
         case 0:
-            cell.configure(with: weatherViewModel.arrayForTable[indexPath.row].image,
-                           time: String.convert(date: weatherViewModel.arrayForTable[indexPath.row].time),
-                           description: weatherViewModel.arrayForTable[indexPath.row].description,
-                           temperature: weatherViewModel.arrayForTable[indexPath.row].temperature)
+            cell.configure(withModel: weatherViewModel.arrayForTable[indexPath.row])
             return cell
         case 1:
             let extraRows = extra[0]
-            cell.configure(with: weatherViewModel.arrayForTable[indexPath.row+extraRows].image,
-                           time: String.convert(date: weatherViewModel.arrayForTable[indexPath.row+extraRows].time),
-                           description: weatherViewModel.arrayForTable[indexPath.row+extraRows].description,
-                           temperature: weatherViewModel.arrayForTable[indexPath.row+extraRows].temperature)
+            cell.configure(withModel: weatherViewModel.arrayForTable[indexPath.row+extraRows])
             return cell
         case 2:
             let extraRows = extra[1] + extra[0]
-            cell.configure(with: weatherViewModel.arrayForTable[indexPath.row+extraRows].image,
-                           time: String.convert(date: weatherViewModel.arrayForTable[indexPath.row+extraRows].time),
-                           description: weatherViewModel.arrayForTable[indexPath.row+extraRows].description,
-                           temperature: weatherViewModel.arrayForTable[indexPath.row+extraRows].temperature)
+            cell.configure(withModel: weatherViewModel.arrayForTable[indexPath.row+extraRows])
             return cell
         case 3:
             let extraRows = extra[2] + extra[1] + extra[0]
-            cell.configure(with: weatherViewModel.arrayForTable[indexPath.row+extraRows].image,
-                           time: String.convert(date: weatherViewModel.arrayForTable[indexPath.row+extraRows].time),
-                           description: weatherViewModel.arrayForTable[indexPath.row+extraRows].description,
-                           temperature: weatherViewModel.arrayForTable[indexPath.row+extraRows].temperature)
+            cell.configure(withModel: weatherViewModel.arrayForTable[indexPath.row+extraRows])
             return cell
         case 4:
             let extraRows = extra[3] + extra[2] + extra[1] + extra[0]
-            cell.configure(with: weatherViewModel.arrayForTable[indexPath.row+extraRows].image,
-                           time: String.convert(date: weatherViewModel.arrayForTable[indexPath.row+extraRows].time),
-                           description: weatherViewModel.arrayForTable[indexPath.row+extraRows].description,
-                           temperature: weatherViewModel.arrayForTable[indexPath.row+extraRows].temperature)
+            cell.configure(withModel: weatherViewModel.arrayForTable[indexPath.row+extraRows])
             return cell
         case 5:
             let extraRows = extra[4] + extra[3] + extra[2] + extra[1] + extra[0]
-            cell.configure(with: weatherViewModel.arrayForTable[indexPath.row+extraRows].image,
-                           time: String.convert(date: weatherViewModel.arrayForTable[indexPath.row+extraRows].time),
-                           description: weatherViewModel.arrayForTable[indexPath.row+extraRows].description,
-                           temperature: weatherViewModel.arrayForTable[indexPath.row+extraRows].temperature)
+            cell.configure(withModel: weatherViewModel.arrayForTable[indexPath.row+extraRows])
             return cell
         case 6:
             let extraRows = extra[5] + extra[4] + extra[3] + extra[2] + extra[1] + extra[0]
-            cell.configure(with: weatherViewModel.arrayForTable[indexPath.row+extraRows].image,
-                           time: String.convert(date: weatherViewModel.arrayForTable[indexPath.row+extraRows].time),
-                           description: weatherViewModel.arrayForTable[indexPath.row+extraRows].description,
-                           temperature: weatherViewModel.arrayForTable[indexPath.row+extraRows].temperature)
+            cell.configure(withModel: weatherViewModel.arrayForTable[indexPath.row+extraRows])
             return cell
         default:
-            cell.configure(with: weatherViewModel.arrayForTable[indexPath.row].image,
-                           time: String.convert(date: weatherViewModel.arrayForTable[indexPath.row].time),
-                           description: weatherViewModel.arrayForTable[indexPath.row].description,
-                           temperature: weatherViewModel.arrayForTable[indexPath.row].temperature)
+            cell.configure(withModel: weatherViewModel.arrayForTable[indexPath.row])
             return cell
         }
     }

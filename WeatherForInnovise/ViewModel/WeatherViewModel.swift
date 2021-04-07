@@ -17,7 +17,6 @@ class WeatherViewModel: NSObject, CLLocationManagerDelegate {
     var weatherMessage: String?
     var arrayForTable = [ForTable]()
 
-    
     //MARK: - Initialization
     override init() {
         super.init()
@@ -125,12 +124,12 @@ class WeatherViewModel: NSObject, CLLocationManagerDelegate {
 
     //MARK: - ConfigureGUI methods
     func setMainImage() -> UIImage {
-        guard let model = fetchedModel.value else { return UIImage(named: "default")! }
-        return UIImage.donwload("\(model.list[0].weather[0].icon)") ?? UIImage(named: "default")!
+        guard let model = fetchedModel.value else { return UIImage(named: "earth")! }
+        return UIImage.donwload("\(model.list[0].weather[0].icon)") ?? UIImage(named: "earth")!
     }
 
     func setPlaceLabel() -> String {
-        guard let model = fetchedModel.value else { return "" }
+        guard let model = fetchedModel.value else { return "Choose location in the debug" }
         return "\(model.city.name), \(model.city.country)"
     }
 
